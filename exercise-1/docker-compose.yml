@@ -14,16 +14,16 @@ services:
     volumes:
       - ./data/pg:/data/postgres
 
-  # app:
-  #   build: .
-  #   container_name: nest-exercise-app
-  #   ports:
-  #     - "3333:3333"
-  #   environment:
-  #     DATABASE_HOST: postgres
-  #     DATABASE_PORT: 5432
-  #     DATABASE_USER: postgres
-  #     DATABASE_PASSWORD: docker
-  #     DATABASE_NAME: nest_exercise_1
-  #   depends_on:
-  #     - postgres
+  app:
+    build: .
+    container_name: nest-exercise-app
+    ports:
+      - "3333:3333"
+    environment:
+      DATABASE_HOST: postgres
+      DATABASE_PORT: 5432
+      DATABASE_USER: postgres
+      DATABASE_PASSWORD: docker
+      DATABASE_NAME: nest_exercise_1
+    depends_on:
+      - postgres
