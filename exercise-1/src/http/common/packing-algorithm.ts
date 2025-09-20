@@ -10,7 +10,7 @@ export type PackedBox = {
 const volume = (altura: number, largura: number, comprimento: number) =>
   altura * largura * comprimento
 
-export function packProductsOptimized(products: ProdutoDto[]): PackedBox[] {
+export function packProducts(products: ProdutoDto[]): PackedBox[] {
   const sorted = [...products].sort(
     (a, b) =>
       volume(b.dimensoes.altura, b.dimensoes.largura, b.dimensoes.comprimento) -
@@ -76,6 +76,10 @@ export function packProductsOptimized(products: ProdutoDto[]): PackedBox[] {
         })
       }
     }
+  }
+
+  for (const box of result) {
+    box.produtos.sort()
   }
 
   return result
